@@ -18,7 +18,7 @@ class Widget extends \WP_Widget
 		),
 		'init_script_src' => array(
 			'name'    => 'URL to widget.js',
-			'default' => '//example.indexdata.com/mkws-widget-wimp.js'
+			'default' => '',
 		),
 		'styling_css'     => array(
 			'name'    => 'Styling CSS-file path',
@@ -29,6 +29,7 @@ class Widget extends \WP_Widget
 	public function __construct()
 	{
 		$this->_fields['styling_css']['default'] = INDEXDATA_PLUGIN_URI . 'assets/style.css';
+                $this->_fields['init_script_src']['default'] = INDEXDATA_PLUGIN_URI . 'assets/mkws-widget-wimp.js';
 
 		parent::__construct(
 			'indexdata_widget',
@@ -60,7 +61,7 @@ class Widget extends \WP_Widget
 				<script src="' . $instance['main_script_src'] . '"></script>
 				<script src="' . $instance['init_script_src'] . '"></script>
 				<link rel="stylesheet" type="text/css" href="' . $instance['styling_css'] . '">
-				<div class="mkws-wimp" autosearch="!param!q=' . $indexDataValue . '"></div>
+				<div class="mkws-wimp" autosearch="' . $indexDataValue . '"></div>
 				';
 			echo $args['after_widget'];
 			self::$instance = TRUE;
