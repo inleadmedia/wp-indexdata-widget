@@ -31,7 +31,7 @@ class Plugin
 
 	public function addMetaBox()
 	{
-		add_meta_box('indexdata', 'IndexData Query', array($this, 'renderMeta'), 'post', 'side');
+		add_meta_box('indexdata', 'Search string for Musikkhylla.no', array($this, 'renderMeta'), 'post', 'side');
 
 	}
 
@@ -49,7 +49,7 @@ class Plugin
 		$value = get_post_meta($post->ID, 'indexdata_query', true);
 
 		// Display the form, using the current value.
-		echo '<label for="indexdata_query">Use DQL for this field</label> ';
+		echo '<label for="indexdata_query">Type in a keyword to show related items</label> ';
 		echo '<input type="text" id="indexdata_query" name="indexdata_query"';
 		echo ' value="' . esc_attr($value) . '" size="25" />';
 	}
