@@ -58,9 +58,12 @@ class Widget extends \WP_Widget
 			//@todo: include script once per page
 			echo '
 				<script src="' . $instance['main_script_src'] . '"></script>
+				<script type="text/javascript">
+					jQuery(\'.widget_indexdata_widget\').appendTo(\'#main\');
+				</script>
 				<script src="' . $instance['init_script_src'] . '"></script>
 				<link rel="stylesheet" type="text/css" href="' . $instance['styling_css'] . '">
-				<div class="mkws-wimp" autosearch="!param!q=' . $indexDataValue . '"></div>
+				<div class="mkws-wimp" autosearch="' . $indexDataValue . '"></div>
 				';
 			echo $args['after_widget'];
 			self::$instance = TRUE;
