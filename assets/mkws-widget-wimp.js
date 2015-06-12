@@ -8,18 +8,18 @@ mkws.registerWidgetType('indexdata-artist-block', function () {
 <ul>\
 {{#each hits}}\
   <li>\
-    {{#mkws-first md-electronic-url}}\
-    <a href="{{this}}">\
-    {{/mkws-first}}\
-      {{md-title}}\
-    </a>\
-<img src="{{md-thumburl}}" />\
-  {{#if md-title-remainder}}\
-    <span>{{md-title-remainder}}</span>\
-  {{/if}}\
-  {{#if md-title-responsibility}}\
-    <span><i>{{md-title-responsibility}}</i></span>\
-  {{/if}}\
+    <span class="left">\
+      {{#mkws-first md-electronic-url}}\
+        <a href="{{this}}">\
+      {{/mkws-first}}\
+      <div>{{md-title}}</div></a>\
+      <div>{{#if md-date}}{{md-date}}{{/if}}</div>\
+    </span>\
+    <span class="right">\
+      {{#if md-thumburl}}\
+        <img class="wimp-img" src="{{md-thumburl}}" />\
+      {{/if}}\
+    </span>\
   </li>\
 {{/each}}\
 </ul>\

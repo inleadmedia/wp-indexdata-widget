@@ -1,3 +1,9 @@
+.widget_indexdata_widget {
+  clear: both;
+  width: 100%;
+  display: inline-block;
+}
+
 .mkwsSummary {
   border-top: 1px solid #95a5a6;
   padding: 10px 0;
@@ -81,3 +87,29 @@
 .mkws-term span {
   float: right;
 }
+
+
+/* Plugin */
+.mkws-indexdata-artist-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mkws-indexdata-artist-block li {
+  clear: both;
+  height: 51px; 
+  border-bottom: 1px solid #95a5a6;
+}
+
+.mkws-indexdata-artist-block img.wimp-img {
+  float: right;
+  max-width: 50px;
+}
+
+.mkws-indexdata-artist-block .left {
+  float: left;
+}
+
+.mkws-indexdata-artist-block .right {
+  float: right;
+} 

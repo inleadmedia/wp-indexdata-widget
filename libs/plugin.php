@@ -102,7 +102,7 @@ class Plugin
 		) {
 			return;
 		}
-		echo '<div class="widget"><h4><span>Related Artist</span></h4><div class="mkws-indexdata-artist-block" autosearch="au='.$indexDataValue.'"></div></div>';
+		echo '<div class="widget"><h4><span>Treff av denne artist</span></h4><div class="mkws-indexdata-artist-block" autosearch="au='.$indexDataValue.'"></div></div>';
 		$artistsBlockStatus = 1;
 	}
 
