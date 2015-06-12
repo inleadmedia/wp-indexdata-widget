@@ -60,13 +60,13 @@ class Widget extends \WP_Widget
 			echo '
 				<script src="' . $instance['main_script_src'] . '"></script>
 				<script type="text/javascript">
-					jQuery(\'.widget_indexdata_widget\').appendTo(\'#main\');
+					jQuery(\'.widget_indexdata_widget\').insertBefore(jQuery(\'.authorarea\').prev());
 				</script>
 				<script src="' . $instance['init_script_src'] . '"></script>
 				<link rel="stylesheet" type="text/css" href="' . $instance['styling_css'] . '">
 				<div class="fullwidth">
 	                                <div class="mkws-facets"></div>
-					<div autosearch="' . $indexDataValue . '" class="mkwsRecords" div="" maxRecs="5"></div>
+					<div id="indexdata_query_block" autosearch="' . $indexDataValue . '" class="mkwsRecords" maxRecs="5"></div>
 				</div>
 				';
 			echo $args['after_widget'];
