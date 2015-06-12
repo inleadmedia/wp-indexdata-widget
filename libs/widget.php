@@ -64,7 +64,10 @@ class Widget extends \WP_Widget
 				</script>
 				<script src="' . $instance['init_script_src'] . '"></script>
 				<link rel="stylesheet" type="text/css" href="' . $instance['styling_css'] . '">
-				<div class="mkws-wimp" autosearch="' . $indexDataValue . '"></div>
+				<div class="fullwidth">
+	                                <div class="mkws-facets"></div>
+					<div autosearch="' . $indexDataValue . '" class="mkwsRecords" div="" maxRecs="5"></div>
+				</div>
 				';
 			echo $args['after_widget'];
 			self::$instance = TRUE;

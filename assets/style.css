@@ -1,37 +1,83 @@
-.mkws-wimp {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #FCFBFA;
-  padding: 0.5em 1em 0.25em;
-  box-shadow: 0 0 2px 0 #7F8F93;
-  border-radius: 0 0 1.5em;
-  -moz-border-radius: 0 0 1.5em;
-  -webkit-border-radius: 0 0 1.5em;
-  line-height: 1.4;
-  color: #86979B;
-  background: radial-gradient(ellipse at center,  #ffffff 0%,#f8f8f8 100%);
+.mkwsSummary {
+  border-top: 1px solid #95a5a6;
+  padding: 10px 0;
+  clear: both;
 }
 
-h2 {
-  font-size: 100%;
-  color: #4A5456;
-  padding-bottom: .5em;
+.mkws-field-thumb > img {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100px;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+.mkws-field-author,
+.mkws-field-date,
+.mkws-field-title {
+  display: block;
 }
 
-li {
-  margin: .95em .25em;
-  padding-top: .75em;
-  border-top: 1px dotted #BEC8CC;
-  font-size: 90%;
-  list-style: none;
+.mkws-field-title {
+  font-size: 1.3em;
 }
 
-a {
-  text-decoration: none;
-  font-weight:bold;
-  color: #2B77AF;
+.mkws-field-author {
+  font-weight: bold;
+}
+
+.mkws-field-date {
+  font-style: italic;
+}
+
+.mkws-details table,
+.mkws-details tr {
+  width: 100%;
+}
+
+.mkws-details table th {
+  width: 20%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.mkws-facets {
+  float: left;
+  width: 25%;
+  padding-right: 10px;
+}
+
+.mkwsRecords {
+  float: left;
+  width: 75%;
+  padding-left: 20px;
+  border-left: 4px double #95a5a6;
+}
+
+.mkws-facet {
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+}
+
+.mkws-facet-title  {
+  font-weight: bold;
+  border-bottom: 1px solid #95a5a6;
+  text-transform: uppercase;
+}
+
+.mkws-term,
+.mkws-facet {
+  clear: both;
+}
+
+.mkws-term a {
+  float: left;
+}
+
+.mkws-term span {
+  float: right;
 }
