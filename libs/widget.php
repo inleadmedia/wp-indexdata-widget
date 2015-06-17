@@ -13,7 +13,7 @@ class Widget extends \WP_Widget
 			'default' => 'New title'
 		),
 		'main_script_src' => array(
-			'name'    => 'Url to complete.js',
+			'name'    => 'URL to complete.js',
 			'default' => '//mkws.indexdata.com/mkws-complete.js'
 		),
 		'init_script_src' => array(
@@ -43,7 +43,8 @@ class Widget extends \WP_Widget
 	public function widget($args, $instance)
 	{
 		if ( ! self::$instance) {
-			//Don't access widget if we're not on the post's page, or somehow there is no post, or post has no query-meta.
+			// Do not access widget if we're not on the post's page,
+			// or somehow there is no post, or post has no query-meta.
 			if ( ! is_single() || ! is_object($post = $GLOBALS['post']) || ! ($indexDataValue = get_post_meta($post->ID,
 					'indexdata_query', true))
 			) {
@@ -56,7 +57,7 @@ class Widget extends \WP_Widget
 				echo $args['before_title'] . $title . $args['after_title'];
 			}
 
-			//@todo: include script once per page
+			// @todo: include script once per page.
 			echo '
 				<script src="' . $instance['main_script_src'] . '"></script>
 				<script type="text/javascript">
@@ -65,7 +66,6 @@ class Widget extends \WP_Widget
 				<script src="' . $instance['init_script_src'] . '"></script>
 				<link rel="stylesheet" type="text/css" href="' . $instance['styling_css'] . '">
 				<div class="fullwidth">
-	                                <div class="mkws-facets"></div>
 					<div id="indexdata_query_block" autosearch="' . $indexDataValue . '" class="mkwsRecords" maxRecs="5"></div>
 				</div>
 				';

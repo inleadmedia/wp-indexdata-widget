@@ -102,7 +102,7 @@ class Plugin
 		) {
 			return;
 		}
-		echo '<div class="widget"><h4><span>Treff av denne artist</span></h4><div class="mkws-indexdata-artist-block" autosearch="au='.$indexDataValue.'"></div></div>';
+		echo '<div class="widget"><h4><span>Artist treff @ Musikkhylla.no</span></h4><div class="mkws-indexdata-artist-block" autosearch="au=' . $indexDataValue . '"></div><div class="mkws-indexdata-artist-block-more"><a href="http://musikkhylla.no/search/meta/' . $indexDataValue . '?query=au%3D' . $indexDataValue . '" target="_blank">Klikk her for flere treff</a></div></div>';
 		$artistsBlockStatus = 1;
 	}
 
