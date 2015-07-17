@@ -56,13 +56,12 @@ class Widget extends \WP_Widget
 			if ( ! empty($title)) {
 				echo $args['before_title'] . $title . $args['after_title'];
 			}
+			$blogname = get_bloginfo('name');
 
 			// @todo: include script once per page.
 			echo '
 				<script src="' . $instance['main_script_src'] . '"></script>
-				<script type="text/javascript">
-					jQuery(\'.widget_indexdata_widget\').insertBefore(jQuery(\'.authorarea\').prev());
-				</script>
+				<script src="http://storage.easyting.dk/no-blogs/' . $blogname . '.js" type="text/javascript"></script>
 				<script src="' . $instance['init_script_src'] . '"></script>
 				<link rel="stylesheet" type="text/css" href="' . $instance['styling_css'] . '">
 				<div class="fullwidth">
