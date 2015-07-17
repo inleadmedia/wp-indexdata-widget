@@ -11,10 +11,6 @@ class Plugin
 			add_action('load-post.php', array($this, 'addMeta'));
 			add_action('load-post-new.php', array($this, 'addMeta'));
 		}
-		else
-		{
-			add_action('dynamic_sidebar_after', array($this, 'showArtistsBlock'));
-		}
 	}
 
 	static public function init()
@@ -90,21 +86,6 @@ class Plugin
 		die;
 	}
 
-	public function showArtistsBlock()
-	{
-		static $artistsBlockStatus;
-		if ($artistsBlockStatus)
-		{
-			return;
-		}
-		if ( ! is_single() || ! is_object($post = $GLOBALS['post']) || ! ($indexDataValue = get_post_meta($post->ID,
-				'indexdata_artist', true))
-		) {
-			return;
-		}
-		echo '<div class="widget"><h4><span>Artist treff @ Musikkhylla.no</span></h4><div class="mkws-indexdata-artist-block" autosearch="au=' . $indexDataValue . '"></div><div class="mkws-indexdata-artist-block-more"><a href="http://musikkhylla.no/search/meta/' . $indexDataValue . '?query=au%3D' . $indexDataValue . '" target="_blank">Klikk her for flere treff</a></div></div>';
-		$artistsBlockStatus = 1;
-	}
 
 	/**
 	 * Called when each post is saved
