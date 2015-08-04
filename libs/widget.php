@@ -32,8 +32,8 @@ class Widget extends \WP_Widget
 
   public function __construct()
   {
-    $this->_fields['styling_css']['default'] = 'http://storage.easyting.dk/no-blogs/style.css';
-    $this->_fields['init_script_src']['default'] = 'http://storage.easyting.dk/no-blogs/mkws-widget-wimp.js';
+    $this->_fields['styling_css']['default'] = '//storage.easyting.dk/no-blogs/style.css';
+    $this->_fields['init_script_src']['default'] = '//storage.easyting.dk/no-blogs/mkws-widget-wimp.js';
 
     parent::__construct(
       'indexdata_widget',
@@ -65,7 +65,7 @@ class Widget extends \WP_Widget
     // @todo: include script once per page.
     echo '
       <script src="' . $instance['main_script_src'] . '"></script>
-      <script src="http://storage.easyting.dk/no-blogs/' . urlencode(strtolower(str_replace(' ', '_', $blogname))) . '.js" type="text/javascript"></script>
+      <script src="//storage.easyting.dk/no-blogs/' . urlencode(strtolower(str_replace(' ', '_', $blogname))) . '.js" type="text/javascript"></script>
       <script src="' . $instance['init_script_src'] . '"></script>
       <link rel="stylesheet" type="text/css" href="' . $instance['styling_css'] . '">';
     //Define when it's an author search or main search.
