@@ -49,7 +49,7 @@ class Widget extends \WP_Widget
 
     // Do not access widget if we're not on the post's page,
     // or somehow there is no post, or post has no query-meta.
-    if ( ! is_single() || ! is_object($post = $GLOBALS['post']) || ! ($indexDataValue = get_post_meta($post->ID,
+    if ( ! is_single() || ! is_object($post = get_queried_object()) || ! ($indexDataValue = get_post_meta($post->ID,
         'indexdata_query', true))
     ) {
       return;
